@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .html-edit {
+      width: 100%;
+      height: 300px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 20px;
+      resize: none;
+    }
+    .html-edit:focus {
+      box-shadow: rgba(0, 0, 0, 0.33) 0 0 15px;
+      outline: none;
+      border: 2px solid blue;
+      /* border-color: blue; */
+    }
+
+    .button {
+      background: #fff;
+      box-shadow: rgba(0, 0, 0, 0.33) 0 0 15px;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.8s ease 0s;
+      margin-bottom: 20px;
+    }
+
+    .button:hover {
+      background: #5B5B5B;
+      color: #fff;
+      transform: rotate(1turn);
+      /* transform: translateX(42px); */
+    }
+
+    .preview {
+      width: 100%;
+      height: 150px;
+      padding: 20px;
+      margin: 0;
+      border: 1px solid #000;
+      border-radius: 12px;
+    }
+  </style>
+
+  <textarea id="html-edit" class="html-edit" placeholder="Nhập code vào đây..."></textarea>
+  <button id="button" class="button">Xem trước</button>
+  <div id="preview" class="preview"></div>
+
+  <script>
+    const htmlEdit = document.querySelector("#html-edit");
+    const button = document.querySelector("#button");
+    button.addEventListener("click", function() {
+      const inputText = htmlEdit.value;
+      if(inputText !=""){
+        document.getElementById("preview").innerHTML=inputText;
+      }
+      else {
+        document.getElementById("preview").innerText = "";
+      }
+    });
+
+  </script>
+</body>
+
+</html>
